@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+start
+:Check if number < 0?;
+if (yes) then (true)
+  :Throw IllegalArgumentException;
+else (no)
+  :Check if number <= 1?;
+  if (yes) then (true)
+    :Return number;
+  else (no)
+    :Check if NUMBER contains number?;
+    if (yes) then (true)
+      :Return NUMBER[number];
+    else (no)
+      :fib = fibonacci(number - 1) + fibonacci(number - 2);
+      :Store fib in NUMBER;
+      :Return fib;
+   endif
+  endif
+ endif
+stop
+@enduml
